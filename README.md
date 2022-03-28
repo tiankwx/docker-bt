@@ -1,10 +1,31 @@
 ## 介绍  
 
 宝塔面板(bt.cn)在龙晰操作系统(Anolis)上的安装;   
+
 兼容CentOS；   
+
+默认信息：
+
+```
+==================================================================
+BT-Panel default info!
+==================================================================
+外网面板地址: http://171.14.62.15:9999/gadmin
+内网面板地址: http://172.17.0.2:9999/gadmin
+*以下仅为初始默认账户密码，若无法登录请执行bt命令重置账户/密码登录
+username: gadmin
+password: gadmin
+If you cannot access the panel,
+release the following panel port [9999] in the security group
+若无法访问面板，请检查防火墙/安全组是否有放行面板[9999]端口
+==================================================================
+```
 
 ---
 
+## Docker hub
+
+https://hub.docker.com/r/tiankwx/anolis_bt.cn
 
 
 ##  根据需要安装软件
