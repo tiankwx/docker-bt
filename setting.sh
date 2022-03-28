@@ -4,11 +4,7 @@ export PATH
 LANG=en_US.UTF-8
 
 # 在线安装
-yum install -y wget
-wget -O /install.sh http://download.bt.cn/install/install_6.0.sh
-chmod a+x /install.sh
-echo "y" | sh /install.sh
-rm -rf /install.sh
+yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && echo "y" | sh install.sh && rm -rf install.sh
 
 # 修改登陆名
 if [ -n "$1" ]; then
