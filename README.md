@@ -1,12 +1,18 @@
 ## 介绍  
 
-宝塔面板(bt.cn)在龙晰操作系统(Anolis)上的安装;   
+宝塔面板(bt.cn)在龙晰操作系统(Anolis 8.4-x86_64)上的安装;
 
 兼容CentOS；   
 
 默认信息：
 
 ```
+ENV BTName='gadmin' BTPassWord='gadmin' BTPath='gadmin' BTport='9999'
+
+VOLUME /www/backup/database /www/backup/site /www/wwwlogs /www/wwwroot /www/server/data /www/server/panel/data
+
+EXPOSE 8888 888 9999 80 22 21 443 8443 8080 3306
+
 ==================================================================
 BT-Panel default info!
 ==================================================================
@@ -38,13 +44,17 @@ bash install_soft.sh 1 install nginx 1.20
 ```
 ---
 
-## 启动
+## 启动例子，注意保存数据
 ```
 docker run -p 443:443,80:80 -d tiankwx/anolis_bt.cn:v0.1
+
 docker run -P --name="BT790" -d tiankwx/anolis_bt.cn:v0.1
+
 docker run -dit --privileged=true --name="BT790" tiankwx/anolis_bt.cn:v0.1
-# BTport使用时，必须在放开端口
+
+# BTport使用时要放开端口
 docker run -p 8888:9999 -d -e "BTName=name" -e "BTPassWord=password" -e "BTPath=path" -e "BTport=9999" tiankwx/anolis_bt.cn:v0.1
+
 docker run -dit \
 -p 80:80 \
 -p 443:443 \
